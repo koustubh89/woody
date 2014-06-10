@@ -1,0 +1,85 @@
+<!-- <div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">Woods</h3>
+</div>
+ -->
+ <script>
+  // var allowDrop= function(ev){
+  //     //console.log("here");
+  //     ev.preventDefault();
+  // }
+  // var holder='';
+  // var drag= function(ev){
+  //   //console.log("picked",ev.target)
+  //   holder= ev.target;
+  //   ev.dataTransfer.setData("Text",ev.target.id);
+  //   //console.log(ev.target.id);
+  // }
+
+  // var drop= function(ev){
+  //   ev.preventDefault();
+  //   //console.log(ev, ev.target,"---------", holder)
+  //   //var data=ev.dataTransfer.getData("text");
+  //   //console.log(data);
+  //   ev.target.appendChild(holder);
+  //   //console.log('dropped');
+  // }
+</script>
+
+<div class="row">
+  <div class="col-md-4 corners" style="float:left;" >
+    <ul class="leftMargin" ng-model='turn'>
+      <li ng-repeat="cards in player1cards" draggable="true" ondragstart="drag(event)" ng-click="fucn('player1')">
+        <div id="{{cards}}" class='card' style="left:20px">{{cards}}</div>
+      </li>
+    </ul>
+
+      {{turn}} <!-- 'turn' a common variable is required -->
+  </div>
+  <div class="col-md-4 corners" style="float:right;">
+    <ul class="leftMargin">
+      <li ng-repeat="cards in player2cards" draggable="true" ondragstart="drag(event)" ng-click="fucn('player2')">
+        <div id="{{cards}}" class='card' style="left:20px">{{cards}}</div>
+      </li>
+    </ul>
+
+    {{turn}}
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8 corners" style="margin-left:17%;padding: 2%;">
+        
+      <div id="divP1" ondrop="drop(event)" ondragover="allowDrop(event)" ng-class="{highlight: turn=='player1'}" ng-disabled="!(turn=='player1')">P1</div>
+      <div id="divP2" ondrop="drop(event)" ondragover="allowDrop(event)" ng-class="{highlight: turn=='player2'}" ng-disabled="(turn=='player2')">P2</div>
+      <div id="divP4" ondrop="drop(event)" ondragover="allowDrop(event)" ng-class="{highlight: turn=='player4'}" ng-disabled="(turn=='player4')">P4</div>
+      <div id="divP3" ondrop="drop(event)" ondragover="allowDrop(event)" ng-class="{highlight: turn=='player3'}" ng-disabled="(turn=='player3')">P3</div>
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 corners" style="float:left;">
+    <ul class="leftMargin">
+      <li ng-repeat="cards in player4cards" draggable="true" ondragstart="drag(event)" ng-click="fucn('player4')">
+        <div id="{{cards}}" class='card' style="left:20px">{{cards}}</div>
+      </li>
+    </ul>
+  </div>  
+  <div class="col-md-4 corners" style="float:right;">
+    <ul class="leftMargin">
+      <li ng-repeat="cards in player3cards" draggable="true" ondragstart="drag(event)" ng-click="fucn('player3')">
+        <div id="{{cards}}" class='card' style="left:20px">{{cards}}</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+</div>

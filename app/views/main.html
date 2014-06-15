@@ -8,26 +8,26 @@
 </div>
  -->
  <script>
-  // var allowDrop= function(ev){
-  //     //console.log("here");
-  //     ev.preventDefault();
-  // }
-  // var holder='';
-  // var drag= function(ev){
-  //   //console.log("picked",ev.target)
-  //   holder= ev.target;
-  //   ev.dataTransfer.setData("Text",ev.target.id);
-  //   //console.log(ev.target.id);
-  // }
+  var allowDrop= function(ev){
+      //console.log("here");
+      ev.preventDefault();
+  }
+  var holder='';
+  var drag= function(ev){
+    //console.log("picked",ev.target)
+    holder= ev.target;
+    ev.dataTransfer.setData("Text",ev.target.id);
+    //console.log(ev.target.id);
+  }
 
-  // var drop= function(ev){
-  //   ev.preventDefault();
-  //   //console.log(ev, ev.target,"---------", holder)
-  //   //var data=ev.dataTransfer.getData("text");
-  //   //console.log(data);
-  //   ev.target.appendChild(holder);
-  //   //console.log('dropped');
-  // }
+  var drop= function(ev){
+    ev.preventDefault();
+    //console.log(ev, ev.target,"---------", holder)
+    //var data=ev.dataTransfer.getData("text");
+    //console.log(data);
+    ev.target.appendChild(holder);
+    //console.log('dropped');
+  }
 </script>
 
 <div class="row">

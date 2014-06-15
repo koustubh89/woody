@@ -68,29 +68,28 @@ angular.module('woodsApp')
 
     distribute();
 
-	var allowDrop= function(ev){
-      //console.log("here");
-        ev.preventDefault();
-  	}
-	
-	var holder='';
-	$scope.drag=function(ev){
-	//console.log("picked",ev.target)
-		holder= ev.target;
+	  /*var allowDrop= function(ev){
+	      //console.log("here");
+	      ev.preventDefault();
+	  }
+	  var holder='';
+	  var drag= function(ev){
+	    //console.log("picked",ev.target)
+	    holder= ev.target;
 	    ev.dataTransfer.setData("Text",ev.target.id);
 	    //console.log(ev.target.id);
-	}
+	  }
 
-	function drop(ev){
+	  var drop= function(ev){
 	    ev.preventDefault();
 	    //console.log(ev, ev.target,"---------", holder)
 	    //var data=ev.dataTransfer.getData("text");
 	    //console.log(data);
 	    ev.target.appendChild(holder);
 	    //console.log('dropped');
-	}
+	  }*/
 
-	$scope.fucn=function(playername){
+  	$scope.fucn=function(playername){
 		console.log("reading the click",playername);
 		if(playername == 'player1'){$scope.turn='player1';}
 		if(playername == 'player2'){$scope.turn='player2';}

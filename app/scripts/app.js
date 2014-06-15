@@ -7,8 +7,6 @@ angular
     'ngSanitize',
     'ngRoute'
   ])
-  .directive('draggable',draggable)
-  .directive('droppable',droppable)
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
